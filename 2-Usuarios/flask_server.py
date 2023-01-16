@@ -24,4 +24,4 @@ def data():
     user = data_user(token)
     return user
 
-app.run()
+app.run(host='0.0.0.0', port=8000, debug=False)

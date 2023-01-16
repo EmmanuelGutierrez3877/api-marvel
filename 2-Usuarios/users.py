@@ -24,7 +24,7 @@ def get_user(name):
     return user
 
 def login(name,password):
-    user = find_user(name)
+    user = find_user(name,password)
     if (user != None):
         token = user['token']
         return token

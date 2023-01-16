@@ -16,7 +16,7 @@ def searchCharacter(name = None, filtro = None):
                 'id': x['id'],
                 'name': x['name'],
                 'image': get_urlImage(x),
-                'apperances':0
+                'apperances': get_apperances(x)
             })
 
     elif (name != None):
@@ -30,7 +30,7 @@ def searchCharacter(name = None, filtro = None):
                     'id': x['id'],
                     'name': x['name'],
                     'image': get_urlImage(x),
-                    'apperances':0
+                    'apperances': get_apperances(x)
                 })
 
         if (filtro == None or filtro == "2"):
@@ -79,3 +79,15 @@ def get_urlImage(reg):
         return reg['thumbnail']['path']+"."+reg['thumbnail']['extension']
 
     return None
+
+def get_apperances(reg):
+    count = 0
+    if ('comics' in reg):
+        count += reg['comics']['available']
+    if ('series' in reg):
+        count += reg['series']['available']
+    if ('stories' in reg):
+        count += reg['stories']['available']
+    if ('events' in reg):
+        count += reg['events']['available']
+    return count

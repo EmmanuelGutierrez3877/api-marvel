@@ -9,4 +9,4 @@ def search():
     filter = request.args.get('filter')
     return searchCharacter(name,filter)
 
-app.run()
+app.run(host='0.0.0.0', port=8000, debug=False)

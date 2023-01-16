@@ -2,7 +2,7 @@ from pymongo import MongoClient
 import json
 
 def get_database():
-   CONNECTION_STRING = "mongodb://localhost:27017/"
+   CONNECTION_STRING = "mongodb://alex:1234@DB_Comics:27017/?authMechanism=DEFAULT"
    client = MongoClient(CONNECTION_STRING)
    db = client['comics']
    print("connected")
