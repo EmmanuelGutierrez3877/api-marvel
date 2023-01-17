@@ -91,3 +91,25 @@ def get_apperances(reg):
     if ('events' in reg):
         count += reg['events']['available']
     return count
+
+def searchComic(id):
+    if (id != None):
+        page = "https://gateway.marvel.com:443/v1/public/comics/{}?{}".format(id,apikey)
+        res = (requests.get(page)).json()
+
+        if ('data' in res):
+            res = res['data']['results'][0]
+            
+            comic = {
+                'id': res["id"],
+                'title': res['title'],
+                'image' : get_urlImage(res),
+                'onSaleDate': get_onsaleDate(res)
+            }
+
+        elif ('code' in res):
+            return Response( "id invalido", status=400,)
+        
+    return comic
+
+

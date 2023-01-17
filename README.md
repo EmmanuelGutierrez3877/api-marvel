@@ -37,5 +37,6 @@ docker build -t flask1 .
 
 docker create -p8001:8000 --name Busqueda --network redComics flask1
 
-
 docker create -p8002:8000 --name Usuarios --network redComics flask2
+
+docker create -p8003:8000 --name Apartados --network redComics flask3
