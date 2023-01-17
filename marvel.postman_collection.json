@@ -1,0 +1,331 @@
+{
+	"info": {
+		"_postman_id": "d1c6a142-0abe-48dd-9f95-ee5a63b03c00",
+		"name": "marvel",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15246888"
+	},
+	"item": [
+		{
+			"name": "seach character",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://gateway.marvel.com:443/v1/public/characters?nameStartsWith=spider-man&ts=1&apikey=71f0282cf32da26c7f3327b6d81c40d8&hash=6158fd49a08d763ed9268a77697e5918",
+					"protocol": "https",
+					"host": [
+						"gateway",
+						"marvel",
+						"com"
+					],
+					"port": "443",
+					"path": [
+						"v1",
+						"public",
+						"characters"
+					],
+					"query": [
+						{
+							"key": "nameStartsWith",
+							"value": "spider-man"
+						},
+						{
+							"key": "ts",
+							"value": "1"
+						},
+						{
+							"key": "apikey",
+							"value": "71f0282cf32da26c7f3327b6d81c40d8"
+						},
+						{
+							"key": "hash",
+							"value": "6158fd49a08d763ed9268a77697e5918"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1-busqueda",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8001/searchComics/?name=thor&filter=2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8001",
+					"path": [
+						"searchComics",
+						""
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "thor"
+						},
+						{
+							"key": "name",
+							"value": "spi",
+							"disabled": true
+						},
+						{
+							"key": "filter",
+							"value": "1",
+							"description": "personajes",
+							"disabled": true
+						},
+						{
+							"key": "filter",
+							"value": "2",
+							"description": "comics"
+						},
+						{
+							"key": "filter",
+							"value": "3",
+							"description": "filtro error",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1-busqueda by id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8001/searchComics/id?id=98445",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8001",
+					"path": [
+						"searchComics",
+						"id"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "98445"
+						},
+						{
+							"key": "id",
+							"value": "cd",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2-users post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8002/users?name=alex&password=123&age=25",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8002",
+					"path": [
+						"users"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "alex"
+						},
+						{
+							"key": "name",
+							"value": "juan",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "123"
+						},
+						{
+							"key": "age",
+							"value": "25"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2-users get",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8002/users?name=alex&password=123",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8002",
+					"path": [
+						"users"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "alex",
+							"description": "nombre correcto"
+						},
+						{
+							"key": "name",
+							"value": "juanito",
+							"description": "nombre error",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "123",
+							"description": "contraseña correcta"
+						},
+						{
+							"key": "password",
+							"value": "456",
+							"description": "contraseña error",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2-get data",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8002/users/data?token=b75bd008d5fecb1f50cf026532e8ae67",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8002",
+					"path": [
+						"users",
+						"data"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "b75bd008d5fecb1f50cf026532e8ae67",
+							"description": "token correcto"
+						},
+						{
+							"key": "token",
+							"value": "hola XD",
+							"description": "token error",
+							"disabled": true
+						},
+						{
+							"key": "token",
+							"value": "b75bd008d5fecb1f50cf026532e8ae68",
+							"description": "token error",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3-add apartado",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8003/addToLayaway?token=b75bd008d5fecb1f50cf026532e8ae67&comic=98445&cantidad=1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8003",
+					"path": [
+						"addToLayaway"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "b75bd008d5fecb1f50cf026532e8ae67"
+						},
+						{
+							"key": "token",
+							"value": "b75bd008d5fecb1f50cf026532e8ae68",
+							"description": "incorrecto",
+							"disabled": true
+						},
+						{
+							"key": "comic",
+							"value": "98445"
+						},
+						{
+							"key": "comic",
+							"value": "sadas",
+							"disabled": true
+						},
+						{
+							"key": "cantidad",
+							"value": "1"
+						},
+						{
+							"key": "cantidad",
+							"value": "sasas",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
